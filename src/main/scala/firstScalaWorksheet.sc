@@ -13,7 +13,7 @@ tost("Butt")
 
 
 def inf(a: Any) = {
-  a
+  a.getClass.getSimpleName
 }
 
 inf(23)
