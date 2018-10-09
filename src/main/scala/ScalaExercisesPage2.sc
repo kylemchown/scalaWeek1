@@ -8,7 +8,7 @@ iteration("Hello", 3)
 
 def iteration2(a:String, b:Int)={
   for(i<-1 to b; j<-1 to b){
-    if(j==4)
+    if(j==b)
       println(a)
     else
       print(a)
@@ -33,8 +33,8 @@ def fizzbuzz(a: String, b:String, c: Int)={
 fizzbuzz("fizz", "buzz", 15)
 
 def recursion(a:String, b: Int): Unit={
-  if (b==1){
-    println(a)
+  if (b==0){
+
   }
   else{
     recursion(a, b-1)
@@ -66,6 +66,7 @@ def recursion2(a:String, b:Int, c:Int, d:Int): Unit={
 recursion2("h",4,4,4)
 
 
+
 def fizzbuzzRecurs(a:String, b:String, c:Int): Unit ={
   if(c == 0){
 
@@ -89,3 +90,9 @@ def fizzbuzzRecurs(a:String, b:String, c:Int): Unit ={
 }
 
 fizzbuzzRecurs("fizz", "buzz", 15)
+
+
+
+def patternMatching1(a:Int, b:Int, c:Boolean)={
+  a
+}

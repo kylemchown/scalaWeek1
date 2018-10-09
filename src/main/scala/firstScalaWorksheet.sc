@@ -29,7 +29,7 @@ def end(a: String, b:Int) ={
 end("Boogie", 2)
 
 def string2(a: String, b: String, c: Char, d: Char) ={
-  var e = a + b
+  val e = a + b
   e.replace(c,d)
 }
 
