@@ -1,6 +1,6 @@
 object firstScalaApp{
   def main(args: Array[String]): Unit = {
-    rps(false)
+    rps(true)
   }
 
   def rps(player: Boolean) ={
@@ -14,7 +14,7 @@ object firstScalaApp{
     var ai1Wins = 0
     var ai2Wins = 0
     if (player) {
-      for (i <- 1 to 15) {
+      for (i <- 1 to 10) {
         val playerChoice = scala.io.StdIn.readLine("Enter your action a as string")
         val aiChoice = aiChoosePlayer(playerRock, playerPaper, playerScissors)
 
@@ -61,7 +61,12 @@ object firstScalaApp{
   }
 
   def aiChoosePlayer(rock: Int, paper: Int, scissors: Int): String ={
-    (rock, paper, scissors) match{
+    val a = scala.util.Random
+    val b = a.nextInt(9)
+    b match{
+      case 0 => "Rock"
+      case 1 => "Paper"
+      case 2 => "Scissors"
       case _ if rock>=paper && rock >= scissors => "Paper"
       case _ if paper>=rock && paper>= scissors => "Scissors"
       case _ => "Rock"
@@ -70,7 +75,7 @@ object firstScalaApp{
 
   def aiChooseAI(rock: Int, paper: Int, scissors: Int): String ={
     val a = scala.util.Random
-    var b = a.nextInt(3)
+    val b = a.nextInt(3)
     b match{
       case 0 => "Paper"
       case 1 => "Scissors"
