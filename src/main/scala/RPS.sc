@@ -1,11 +1,13 @@
 def rps(player: Boolean) ={
+
+
   var playerWins = 0
   var aiWins = 0
   var playerRock = 0
   var playerPaper = 0
   var playerScissors = 0
-  //var playerChoice = scala.io.StdIn.readLine()
- var playerChoice = "Rock"
+  var playerChoice = scala.io.StdIn.readLine("augfdhsvddvfddf")
+
 
   var aiChoice = aiChoose(playerRock, playerPaper, playerScissors)
 
