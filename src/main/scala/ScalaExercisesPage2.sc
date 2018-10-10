@@ -112,19 +112,17 @@ patternMatching1(2,6,false)
 
 
 def patternMatching2(a: Any)={
-  var b = 1
-  var c = 2
-  var d = (1,1)
-
   a match{
-    case a: Array[Int] if a.size >= 2 => b = a(0); c = a(1); Array(c,b)
-    case a: Tuple2[Int, Int] => val(b,c) = a; d = (c,b); d
-    case a: List[Int] if a.size >= 2 => b = a.head; c=a.tail.head; val e = (c,b); e
+    case a: Array[Int] if a.size >= 2 => Array(a(1),a(0))
+    case a: List[Int] if a.size >= 2 =>(a.tail.head, a.head)
+    case _ if a.getClass.getSimpleName.startsWith("Tuple") && a.asInstanceOf[Product].productArity >1 => (a.asInstanceOf[Product].productElement(1), a.asInstanceOf[Product].productElement(0))
     case _ => println("Not valid")
   }
 }
 
-patternMatching2((123,321))
+
+
+patternMatching2((123,321,12345))
 
 def functional1()={
   var a = java.util.TimeZone.getAvailableIDs
