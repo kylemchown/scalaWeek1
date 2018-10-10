@@ -141,12 +141,17 @@ def functional1()={
   e
 
 }
+
+def functionalRedo()={
+  java.util.TimeZone.getAvailableIDs.map(element => element.split("/")).filter(_.size>1)
+}
 //var e = scala.collection.mutable.ArrayBuffer.empty[String]
 //var q = java.util.TimeZone.getAvailableIDs.filter(_.size >1).foreach(e += _.split("/")(1) )
 //e
 
 functional1()
 
+functionalRedo()
 
 
 
