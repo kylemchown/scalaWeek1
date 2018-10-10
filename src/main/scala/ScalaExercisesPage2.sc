@@ -1,3 +1,5 @@
+
+
 def iteration(a: String, b: Int)={
   for(i<- 1 to b){
     println(a)
@@ -94,5 +96,59 @@ fizzbuzzRecurs("fizz", "buzz", 15)
 
 
 def patternMatching1(a:Int, b:Int, c:Boolean)={
-  a
+  c match{
+    case false if a==0 => b
+    case false if b==0 => a
+    case false if a==0 & b==0 => 0
+    case true => a+b
+    case false => a*b
+
+  }
 }
+
+patternMatching1(2,6,false)
+
+
+
+
+def patternMatching2(a: Any)={
+  var b = 1
+  var c = 2
+  var d = (1,1)
+
+  a match{
+    case a: Array[Int] if a.size >= 2 => b = a(0); c = a(1); Array(c,b)
+    //case a: Array[Int] if a.size == 2 => b = a(0); c = a(1); a(0)=c; a(1)=b; a
+
+    case a: Tuple2[Int, Int] => val(b,c) = a; d = (c,b); d
+    case a: List[Int] if a.size >= 2 => b = a.head; c=a.tail.head; val e = (c,b); e
+    case _ => println("Not valid")
+  }
+}
+
+patternMatching2((123,321))
+
+def functional1()={
+  var a = java.util.TimeZone.getAvailableIDs
+  var b = scala.collection.mutable.ArrayBuffer.empty[Array[String]]
+  for (i<-a){
+    var c = i.split("/")
+    b += c
+  }
+  var d = b.filter(_.size > 1)
+  var e = scala.collection.mutable.ArrayBuffer.empty[String]
+  for (i<-d){
+    e += i(1)
+  }
+  e
+
+}
+//var e = scala.collection.mutable.ArrayBuffer.empty[String]
+//var q = java.util.TimeZone.getAvailableIDs.filter(_.size >1).foreach(e += _.split("/")(1) )
+//e
+
+functional1()
+
+
+
+
