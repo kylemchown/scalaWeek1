@@ -118,8 +118,6 @@ def patternMatching2(a: Any)={
 
   a match{
     case a: Array[Int] if a.size >= 2 => b = a(0); c = a(1); Array(c,b)
-    //case a: Array[Int] if a.size == 2 => b = a(0); c = a(1); a(0)=c; a(1)=b; a
-
     case a: Tuple2[Int, Int] => val(b,c) = a; d = (c,b); d
     case a: List[Int] if a.size >= 2 => b = a.head; c=a.tail.head; val e = (c,b); e
     case _ => println("Not valid")
