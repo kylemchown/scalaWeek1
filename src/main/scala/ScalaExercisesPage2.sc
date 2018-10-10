@@ -99,7 +99,6 @@ def patternMatching1(a:Int, b:Int, c:Boolean)={
   c match{
     case false if a==0 => b
     case false if b==0 => a
-    case false if a==0 & b==0 => 0
     case true => a+b
     case false => a*b
 
@@ -113,8 +112,8 @@ patternMatching1(2,6,false)
 
 def patternMatching2(a: Any)={
   a match{
-    case a: Array[Int] if a.size >= 2 => Array(a(1),a(0))
-    case a: List[Int] if a.size >= 2 =>(a.tail.head, a.head)
+    case a: Array[Any] if a.size >= 2 => Array(a(1),a(0))
+    case a: List[Any] if a.size >= 2 =>(a.tail.head, a.head)
     case _ if a.getClass.getSimpleName.startsWith("Tuple") && a.asInstanceOf[Product].productArity >1 => (a.asInstanceOf[Product].productElement(1), a.asInstanceOf[Product].productElement(0))
     case _ => println("Not valid")
   }
@@ -122,7 +121,7 @@ def patternMatching2(a: Any)={
 
 
 
-patternMatching2((123,321,1234))
+patternMatching2(("aaa", "bbb"))
 
 def functional1()={
   var a = java.util.TimeZone.getAvailableIDs
@@ -141,7 +140,7 @@ def functional1()={
 }
 
 def functionalRedo()={
-  java.util.TimeZone.getAvailableIDs.map(element => element.split("/")).filter(_.size>1)
+  java.util.TimeZone.getAvailableIDs.map(element => element.split("/")).filter(_.size>1).flatMap(_.toList).distinct
 }
 //var e = scala.collection.mutable.ArrayBuffer.empty[String]
 //var q = java.util.TimeZone.getAvailableIDs.filter(_.size >1).foreach(e += _.split("/")(1) )

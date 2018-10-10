@@ -6,4 +6,11 @@ def tooHot(temp: Int, isSummer: Boolean)={
   }
 }
 
-tooHot(50,false)
+tooHot(60,false)
+tooHot(61,false)
+tooHot(89,false)
+tooHot(90,false)
+tooHot(60,true)
+tooHot(61,true)
+tooHot(99,true)
+tooHot(100,true)
