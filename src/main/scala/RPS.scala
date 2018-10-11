@@ -1,6 +1,6 @@
 object firstScalaApp{
   def main(args: Array[String]): Unit = {
-    rps(true)
+    rps(false)
   }
 
   def rps(player: Boolean) ={
@@ -36,7 +36,7 @@ object firstScalaApp{
       println("You won " + playerWins + " time!")
     }
     else{
-      for(i<- 1 to 15) {
+      for(i<- 1 to 50) {
         val aiChoice1 = aiChooseAI(playerRock, playerPaper, playerScissors)
         val aiChoice2 = aiChooseAI(playerRock, playerPaper, playerScissors)
 
