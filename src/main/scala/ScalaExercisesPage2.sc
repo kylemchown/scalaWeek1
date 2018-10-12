@@ -1,6 +1,6 @@
 
 
-def iteration(a: String, b: Int)={
+def iteration(a: String, b: Int): Unit ={
   for(i<- 1 to b){
     println(a)
   }
@@ -8,7 +8,7 @@ def iteration(a: String, b: Int)={
 
 iteration("Hello", 3)
 
-def iteration2(a:String, b:Int)={
+def iteration2(a:String, b:Int): Unit ={
   for(i<-1 to b; j<-1 to b){
     if(j==b)
       println(a)
@@ -19,7 +19,7 @@ def iteration2(a:String, b:Int)={
 
 iteration2("Haa", 4)
 
-def fizzbuzz(a: String, b:String, c: Int)={
+def fizzbuzz(a: String, b:String, c: Int): Unit ={
   for(i<-1 to c){
     if(i%3 == 0 && i%5==0)
       println(a+b)
@@ -105,7 +105,7 @@ def patternMatching1(a:Int, b:Int, c:Boolean)={
   }
 }
 
-patternMatching1(2,6,false)
+patternMatching1(2,6,c = false)
 
 
 
