@@ -1,4 +1,4 @@
-def rps(player: Boolean) ={
+def rps(player: Boolean): Unit ={
 
 
   var playerWins = 0

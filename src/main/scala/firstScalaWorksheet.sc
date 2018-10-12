@@ -5,7 +5,7 @@ val tast = "Hello World!"
 println(tast)
 
 def tost(a: String): Unit = {
-  tast
+  println(a)
 }
 
 tost("Butt")
@@ -21,9 +21,7 @@ inf("asd")
 inf(true)
 
 def end(a: String, b:Int) ={
-  var c = a.length
-  c = c - b
-  a.substring(c)
+  a.substring(a.length-b)
 }
 
 end("Boogie", 2)
@@ -46,7 +44,11 @@ def sum(a: Int, b:Int, c:Boolean) ={
     a*b
 }
 
-sum(1,2, true)
-sum(1,2, false)
-sum(1,0, false)
-sum(0,2, false)
+sum(1,2, c = true)
+sum(1,2, c = false)
+sum(1,0, c = false)
+sum(0,2, c = false)
+
+
+
+1 to 5 foreach()
