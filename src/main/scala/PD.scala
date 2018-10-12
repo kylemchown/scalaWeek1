@@ -25,7 +25,7 @@ object PD {
 
     if (player) {
       (1 to 5).foreach { i =>
-        val playerChoice = scala.io.StdIn.readLine("Enter your action a as string")
+        val playerChoice = scala.io.StdIn.readLine("Enter your action as a string").capitalize
         val aiChoice = aiChoosePlayer(playerPrev, aiStrat, playerBetray)
 
 

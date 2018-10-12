@@ -1,6 +1,6 @@
 object RPS{
   def main(args: Array[String]): Unit = {
-    rps(false)
+    rps(true)
   }
 
   def rps(player: Boolean): Unit ={
@@ -15,7 +15,7 @@ object RPS{
     var ai2Wins = 0
     if (player) {
       for (i <- 1 to 10) {
-        val playerChoice = scala.io.StdIn.readLine("Enter your action a as string")
+        val playerChoice = scala.io.StdIn.readLine("Enter your action as a string").toLowerCase.capitalize
         val aiChoice = aiChoosePlayer(playerRock, playerPaper, playerScissors)
 
 
