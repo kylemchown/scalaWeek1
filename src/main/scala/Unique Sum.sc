@@ -22,10 +22,15 @@ def uniSum(a: Int, b: Int, c: Int)={
   output
 }
 
-//def uniSum2(a:Int, b:Int, c:Int)={
-//  (a,b,c) match{
-//  case(a,a,a)
-//  }
-//}
+def uniSum2(a:Int, b:Int, c:Int)={
+  (a,b,c) match{
+    case (_,`a`,`a`) => 0
+    case (_,`a`,_) => c
+    case (_,_,`a`)=> b
+    case (_,_,`b`)=> a
+    case _ => a + b + c
+  }
+}
 
 uniSum(234,234,234)
+uniSum2(1243,1243,1243)
