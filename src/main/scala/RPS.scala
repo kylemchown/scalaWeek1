@@ -109,6 +109,7 @@ object RPS{
 
   }
 
+
   def aiChoosePlayer(rock: Int, paper: Int, scissors: Int): String ={
     val b = scala.util.Random.nextInt(9)
     b match{
