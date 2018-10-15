@@ -54,7 +54,7 @@ object PD {
 
       }
       println("You got " + points(0) + " points!")
-      println("The AI got " + points(0) + " points!")
+      println("The AI got " + points(1) + " points!")
     }
     else {
       (1 to 100).foreach { i =>
@@ -64,8 +64,8 @@ object PD {
         (aiChoice1, aiChoice2) match {
           case ("C", "C") => println("AI 1 Cooperates")
             println("AI 2 Cooperates")
-            aipoints(0) += 3
-            aipoints(1) += 3
+            aipoints(0) += 4
+            aipoints(1) += 4
             ai1Prev = "C"
             ai2Prev = "C"
             println("You both cooperated")
@@ -98,8 +98,8 @@ object PD {
         }
 
       }
-      println("AI 1 got " + ai1Points + " points!")
-      println("AI 2 got " + ai2Points + " points!")
+      println("AI 1 got " + aipoints(0) + " points!")
+      println("AI 2 got " + aipoints(1) + " points!")
 
     }
 

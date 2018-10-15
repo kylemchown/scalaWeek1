@@ -23,8 +23,8 @@ def uniSum(a: Int, b: Int, c: Int)={
 }
 
 //def uniSum2(a:Int, b:Int, c:Int)={
-//  a match{
-//
+//  (a,b,c) match{
+//  case(a,a,a)
 //  }
 //}
 
