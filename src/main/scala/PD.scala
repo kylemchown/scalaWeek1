@@ -6,22 +6,19 @@ object PD {
 
   def rps(player: Boolean, noiseLevel: Int): Unit = {
     var playerPrev = "C"
-    var playerPoints = 0
-    var aiPoints = 0
-    val a = scala.util.Random
-    val aiStrat = a.nextInt(5)
+    val points = Array(0,0)
+    val aiStrat = scala.util.Random.nextInt(5)
     var playerBetray = false
 
-    val ai1Strat = a.nextInt(5)
+    val ai1Strat = scala.util.Random.nextInt(5)
     println("AI 1 : Strategy " + ai1Strat)
-    val ai2Strat = a.nextInt(5)
+    val ai2Strat = scala.util.Random.nextInt(5)
     println("AI 2 : Strategy " + ai2Strat)
     var ai1Betray = false
     var ai2Betray = false
     var ai1Prev = "C"
     var ai2Prev = "C"
-    var ai1Points = 0
-    var ai2Points = 0
+    val aipoints = Array(0,0)
 
     if (player) {
       (1 to 5).foreach { i =>
@@ -31,24 +28,24 @@ object PD {
 
         (playerChoice, aiChoice) match {
           case ("C", "C") => println("AI cooperates")
-            playerPoints += 3
-            aiPoints += 3
+            points(0) += 3
+            points(1) += 3
             playerPrev = "C"
             println("You both cooperated")
           case ("C", "B") => println("AI betrays")
-            playerPoints += 1
-            aiPoints += 5
+            points(0) += 1
+            points(1) += 5
             playerPrev = "C"
             println("You were betrayed")
           case ("B", "C") => println("AI cooperates")
-            playerPoints += 5
-            aiPoints += 1
+            points(0) += 5
+            points(1) += 1
             playerPrev = "B"
             playerBetray = true
             println("You betrayed the AI")
           case ("B", "B") => println("AI betrays")
-            playerPoints += 2
-            aiPoints += 2
+            points(0) += 2
+            points(1) += 2
             playerPrev = "B"
             playerBetray = true
             println("You both betray")
@@ -56,8 +53,8 @@ object PD {
         }
 
       }
-      println("You got " + playerPoints + " points!")
-      println("The AI got " + aiPoints + " points!")
+      println("You got " + points(0) + " points!")
+      println("The AI got " + points(0) + " points!")
     }
     else {
       (1 to 100).foreach { i =>
@@ -67,31 +64,31 @@ object PD {
         (aiChoice1, aiChoice2) match {
           case ("C", "C") => println("AI 1 Cooperates")
             println("AI 2 Cooperates")
-            ai1Points += 3
-            ai2Points += 3
+            aipoints(0) += 3
+            aipoints(1) += 3
             ai1Prev = "C"
             ai2Prev = "C"
             println("You both cooperated")
           case ("C", "B") => println("AI 1 Cooperates")
             println("AI 2 Betrays")
-            ai1Points += 1
-            ai2Points += 5
+            aipoints(0) += 1
+            aipoints(1) += 5
             ai1Prev = "C"
             ai2Prev = "B"
             ai2Betray = true
             println("You were betrayed")
           case ("B", "C") => println("AI 1 Betrays")
             println("AI 2 Cooperates")
-            ai1Points += 5
-            ai2Points += 1
+            aipoints(0) += 5
+            aipoints(1) += 1
             ai1Prev = "B"
             ai2Prev = "C"
             ai1Betray = true
             println("You betrayed the AI")
           case ("B", "B") => println("AI 1 Betrays")
             println("AI 2 Betrays")
-            ai1Points += 2
-            ai2Points += 2
+            aipoints(0) += 2
+            aipoints(1) += 2
             ai1Prev = "B"
             ai2Prev = "B"
             ai1Betray = true

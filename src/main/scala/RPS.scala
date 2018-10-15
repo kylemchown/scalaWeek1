@@ -120,8 +120,7 @@ object RPS{
   }
 
   def aiChooseAI(): String ={
-    val a = scala.util.Random
-    val b = a.nextInt(3)
+    val b = scala.util.Random.nextInt(3)
     b match{
       case 0 => "Paper"
       case 1 => "Scissors"
