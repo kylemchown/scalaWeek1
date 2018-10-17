@@ -1,5 +1,9 @@
 println("Hello")
 
+val r1 = new scala.util.Random(1).nextInt(9)
+
+
+
 val tast = "Hello World!"
 
 println(tast)
@@ -50,5 +54,3 @@ sum(1,0, c = false)
 sum(0,2, c = false)
 
 
-
-1 to 5 foreach()

@@ -3,7 +3,7 @@ object RPS{
     rps(false)
   }
 
-  def rps(player: Boolean): Unit ={
+  def rps(player: Boolean): Array[Int] ={
 
     val wins = Array(0,0)
     val choices = Array(0,0,0)
@@ -55,6 +55,8 @@ object RPS{
 
       }
       println("You won " + wins(0) + " time!")
+      Array(wins(0), 10-wins(0))
+
     }
     else{
       for(i<- 1 to 50) {
@@ -100,7 +102,7 @@ object RPS{
       }
       println("AI 1 won " + aiwins(0) + " time!")
       println("AI 2 won " + aiwins(1) + " time!")
-
+      Array(aiwins(0), aiwins(1))
     }
 
 
